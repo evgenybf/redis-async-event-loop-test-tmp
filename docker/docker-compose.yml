@@ -1,0 +1,19 @@
+version: '3'
+services:
+  test:
+    container_name: redis_async_test
+    build:
+      context: ../
+      dockerfile:  docker/Dockerfile
+    depends_on:
+      - redis
+    volumes:
+      - ../:/var/app:cached
+    entrypoint: [
+       "pytest", "--log-level=DEBUG", "."
+    ]
+  redis:
+    image: redis/redis-stack:latest
+    container_name: redis_for_async_test
+    ports:
+      - "6379:6379"

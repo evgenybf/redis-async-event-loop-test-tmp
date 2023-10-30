@@ -1,0 +1,15 @@
+.python-version
+venv/
+.venv
+.*.swp
+tags
+build
+MANIFEST
+dist
+*.egg-info
+*.pyc
+*.pyo
+.pytest_cache
+tmp/
+out/
+.idea
